@@ -6,10 +6,8 @@ checkPassword();
 
 
 function checkPassword(password){
-	//passwordStrong();
-	//debugging console.log("password is\n" + password + "\n");
 	passwordLong();
-	console.log(passwordLong());
+	passwordStrong();
 	/*if(passwordStrong === true){
 		if (passwordLong === true){
 			console.log("\n Your password is strong and fits the minimum length requirement!");
@@ -23,9 +21,13 @@ function checkPassword(password){
 }
 
 function passwordStrong(){
-	if (password.match(/^[A-Z]+$/) || password.match(/^[!]+$/)){
+	var passwordCap = password.match(/[A-Z]/)
+	console.log("\n password cap is " +passwordCap)
+	if (password = passwordCap /*|| password.match(/^[!]+$/) */){
+		console.log("\n Strong returns true!!!");
 		return true;
 	} else{
+		console.log("\n Strong returns false!!!");
 		return false;
 	}
 }
@@ -33,10 +35,8 @@ function passwordStrong(){
 
 function passwordLong(){
 	if (password.length > 9){
-		// debugging console.log("It is true!");
 		return true;
 	} else{
-		//  debugging  console.log("It is false!");
 		return false;
 	}
 
