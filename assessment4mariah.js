@@ -9,10 +9,8 @@ userMenu();
 
 
 function userMenu(){
-
-	console.log("Hunger is at " + hunger);
-	
 	var userChoice = sget("\nYou are performing your rounds and it is time to interact with " + animalName + " again.\nPlease type the number of your choice.\n1. Feed.\n2. Play.\n3. Open pool area\n4. Do nothing\n5. Quit ZooKeeper\n").trim();
+	
 	switch(userChoice){
 		case "1":
 			feed();
@@ -44,14 +42,14 @@ function userMenu(){
 
 function feed(){
 
-	if(hunger =< 0){
+	if(hunger <= 0){
 		console.log("\n" + animalName + "finally seems ready to eat.  She plops down next to the meat pile and begins tearing it to shreds.");
 		hunger = 3;
 	} else {
 		console.log("\nYou throw " + animalName + " a hunk of meat.  She saunters over to it, but doesn't seem too interested right now.");
 		hunger --;
-		console.log("Hunger is at " + hunger);
 	}
+
 	userMenu();
 
 }
@@ -60,21 +58,23 @@ function feed(){
 
 function play(){
 
+	console.log("\nJK does nothing yet!\n");
+	userMenu();
 
 }
 
 
 function pool(){
 
-
-
+	console.log("\nJK does nothing yet!\n");
+	userMenu();
 }
 
 
 function doNothing(){
 
 
-if(hunger = 0){
+if(hunger <= 0){
 		console.log("\n" + animalName + "roars.  She seems really hungry-maybe you should feed her?\n");
 	} else {
 		console.log("\n" + animalName + " looks lazily at you.  She wanders over to a shade tree to take a cat nap.\n");
