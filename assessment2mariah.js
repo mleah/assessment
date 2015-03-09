@@ -1,11 +1,31 @@
 var sget = require("sget");
-
+var password = sget("Please enter a password.  It should be at least 10 characters long and contain at least 1 capital letter or an exclamation point.").trim.split('');
 
 function checkPassword(){
-	var password = sget("Please enter a password.  It should be at least 10 characters long and contain at least 1 capital letter or an exclamation point.").trim.split('');
-	if(password)
+	if(passwordStrong === true){
+		if (passwordLong === true){
+			console.log("\n Your password is strong and fits the minimum length requirement!");
+		} else {
+			console.log("\nYour password is not long enough!\n  Remember, it must be at least 10 characters long. \n");
+		} else {
+			console.log("\nYour password is not strong enough!\n  Remember, it contain at least 1 capital letter or exclamation point. \n");
+		}
+	}
 
 
 
+
+}
+
+function passwordStrong(){
+	if (password.length >= 10){
+		return true;
+	} else{
+		return false;
+	}
+}
+
+
+function passwordLong(){
 
 }
