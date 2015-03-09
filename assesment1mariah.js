@@ -1,9 +1,21 @@
 var sget = require("sget");
 
-var numberOne = sget("Please enter your first number.").parseInt();
-var numberTwo = sget("Please enter your second number.").parseInt();
-var numberThree = sget("Please enter your third number.").parseInt();
+userInput();
 
-var addition = numberOne +	numberTwo + numberThree;	
+function userInput(){
+	var numberOne = sget("Please enter your first number.");
+	var numberTwo = sget("Please enter your second number.");
+	var numberThree = sget("Please enter your third number.");
+	inputToNumber();
+}
 
-console.log(addition + numberOne + numberTwo + numberThree);
+function inputToNumber (numberOne, numberTwo, numberThree){
+var numberOneInt = Number(numberOne);
+var numberTwoInt = Number(numberTwo);
+var numberThreeInt = Number(numberThree);  //may come back to refactor this later, sget input is output as a string
+
+}
+
+var addition = numberOneInt +	numberTwoInt + numberThreeInt;	
+
+console.log("\n" + addition + "\n"+ numberOne + numberTwo + numberThree);
