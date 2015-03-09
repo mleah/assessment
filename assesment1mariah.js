@@ -12,14 +12,12 @@ function inputToNumber (){
 	var numberOneInt = Number(numberOne);
 	var numberTwoInt = Number(numberTwo);
 	var numberThreeInt = Number(numberThree);  //may come back to refactor this later, sget input is output as a string
-	
-
-	var addition = numberOneInt +	numberTwoInt + numberThreeInt;
-	console.log("\n" + addition + numberOneInt + numberTwoInt + numberThreeInt);
-	testForNumber();
+	var addition = numberOneInt +	numberTwoInt + numberThreeInt; 
+	console.log("\nThe sum of " + numberOneInt + ", " + numberTwoInt + ", and " + numberThreeInt + " is " +addition + ".");
+	//testForNumber();
 }
 
-
+/*
 function testForNumber (numberOneInt, numberTwoInt, numberThreeInt){
 	if (numberOneInt === NaN){
 			console.log("\n numberOneInt is not a number.  THis works.")
@@ -33,7 +31,7 @@ function testForNumber (numberOneInt, numberTwoInt, numberThreeInt){
 
 
 }
-
+*/
 
 
 
