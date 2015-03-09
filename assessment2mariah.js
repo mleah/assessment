@@ -8,14 +8,15 @@ checkPassword();
 function checkPassword(password){
 	passwordLong();
 	passwordStrong();
-	if(passwordStrong === true){
-		if (passwordLong === true){
+	console.log("")
+	if(passwordLong === true){
+		if (passwordStrong === true){
 			console.log("\n Your password is strong and fits the minimum length requirement!");
 		} else {
-			console.log("\nYour password is not long enough!\n  Remember, it must be at least 10 characters long. \n");
+			console.log("\nYour password is not strong enough!\n  Remember, it must contain at least 1 capital letter or exclamation point. \n");
 		}}
 	else {
-		console.log("\nYour password is not strong enough!\n  Remember, it must contain at least 1 capital letter or exclamation point. \n");
+		console.log("\nYour password is not long enough!\n  Remember, it must be at least 10 characters long. \n");
 	} 
 
 }
@@ -36,8 +37,10 @@ function passwordStrong(){
 
 function passwordLong(){
 	if (password.length > 9){
+		console.log("\n Long returns true!!!");
 		return true;
 	} else{
+		console.log("\n Long returns false!!!");
 		return false;
 	}
 
