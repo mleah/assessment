@@ -8,7 +8,7 @@ checkPassword();
 function checkPassword(password){
 	passwordLong();
 	passwordStrong();
-	/*if(passwordStrong === true){
+	if(passwordStrong === true){
 		if (passwordLong === true){
 			console.log("\n Your password is strong and fits the minimum length requirement!");
 		} else {
@@ -16,14 +16,15 @@ function checkPassword(password){
 		}}
 	else {
 		console.log("\nYour password is not strong enough!\n  Remember, it must contain at least 1 capital letter or exclamation point. \n");
-	} */
+	} 
 
 }
 
 function passwordStrong(){
-	var passwordCap = password.match(/[A-Z]/)
-	console.log("\n password cap is " +passwordCap)
-	if (password = passwordCap /*|| password.match(/^[!]+$/) */){
+	var passwordCap = password.match(/[A-Z]/);
+	var passwordExc = password.match(/[!]/);
+	console.log("\n password cap is " +passwordCap + "\npasswordExc is " + passwordExc);
+	if (password = passwordCap || passwordExc){
 		console.log("\n Strong returns true!!!");
 		return true;
 	} else{
