@@ -7,8 +7,9 @@ checkPassword();
 
 function checkPassword(password){
 	//passwordStrong();
-	console.log("password is\n" + password + "\n");
+	//debugging console.log("password is\n" + password + "\n");
 	passwordLong();
+	console.log(passwordLong());
 	/*if(passwordStrong === true){
 		if (passwordLong === true){
 			console.log("\n Your password is strong and fits the minimum length requirement!");
@@ -32,13 +33,11 @@ function passwordStrong(){
 
 function passwordLong(){
 	if (password.length > 9){
-		console.log("It is true!");
+		// debugging console.log("It is true!");
 		return true;
-		console.log("It is true!");
 	} else{
-		console.log("It is false!");
+		//  debugging  console.log("It is false!");
 		return false;
-		console.log("It is false!");
 	}
 
 }
