@@ -3,7 +3,9 @@ var sget = require("sget");
 console.log("\nWelcome to ZooKeeper!\nYou will get to name your new friend, a siberian tiger, and interact with her!\nHave fun!\n")
 
 var animalName = sget("Please name your new friend!").trim();
-var hunger = 3;
+var hunger = 0;
+var boredom = 0;
+var score = 0;
 
 userMenu();
 
@@ -32,6 +34,9 @@ function userMenu(){
 			quit();
 			break;
 
+		case "":
+			console.log("\nPlease make sure to enter input!  Please choose again.\n")
+
 
 		default:
 			console.log("\nNot a valid choice!  Please choose again.\n")
@@ -42,12 +47,13 @@ function userMenu(){
 
 function feed(){
 
-	if(hunger <= 0){
-		console.log("\n" + animalName + "finally seems ready to eat.  She plops down next to the meat pile and begins tearing it to shreds.");
-		hunger = 3;
+	if(hunger > 3){
+		console.log("\n" + animalName + " finally seems ready to eat.  She plops down next to the lonely meat pile and makes short work of it.  She then finds a sunny spot on a rock ledge and begins basking.\n");
+		hunger -2;
+		score ++;
 	} else {
-		console.log("\nYou throw " + animalName + " a hunk of meat.  She saunters over to it, but doesn't seem too interested right now.");
-		hunger --;
+		console.log("\nYou throw " + animalName + " a hunk of meat.  She saunters over to it, but doesn't seem too interested right now and turns her back.  The meat sits, alone.\n");
+		boredom --;
 	}
 
 	userMenu();
@@ -58,7 +64,13 @@ function feed(){
 
 function play(){
 
-	console.log("\nJK does nothing yet!\n");
+	if(boredom < 1){
+		console.log("\n" + animalName + "finally seems ready to eat.  She plops down next to the lonely meat pile and makes short work of it.  She then finds a sunny spot on a rock ledge and begins basking.\n");
+		score ++;
+	} else {
+		console.log("\nYou throw " + animalName + " a hunk of meat.  She saunters over to it, but doesn't seem too interested right now and turns her back.  The meat sits, alone.\n");
+		boredom --;
+	}
 	userMenu();
 
 }
@@ -66,7 +78,14 @@ function play(){
 
 function pool(){
 
-	console.log("\nJK does nothing yet!\n");
+	if(boredom < 2){
+		console.log("\n" + animalName + " eagerly runs over to the pool, splashing as she misses her footing and falls into the pool.  She doesn't seem to care much though as she works the pool into furious waves.\n");
+		score ++;
+		boredom ++;
+	} else {
+		console.log("\n" + animalName + " makes her way over to the open pool and slips into the water.  She begins to paddle around slowly, small whirlpools forming in the wake of her tail  She seems content.\n");
+		hunger ++;
+	}
 	userMenu();
 }
 
@@ -74,11 +93,12 @@ function pool(){
 function doNothing(){
 
 
-if(hunger <= 0){
+if(hunger < 1){
 		console.log("\n" + animalName + "roars.  She seems really hungry-maybe you should feed her?\n");
 	} else {
 		console.log("\n" + animalName + " looks lazily at you.  She wanders over to a shade tree to take a cat nap.\n");
-		hunger --;
+		hunger ++;
+		boredom --;
 	}
 
 	userMenu();
@@ -88,7 +108,8 @@ if(hunger <= 0){
 
 function quit(){
 
-	console.log("\nThanks for playing ZooKeeper!\nYour friend " + animalName + " will miss you!");
+	console.log("\nThanks for playing ZooKeeper!\nYour friend " + animalName + " will miss you!\n" +
+					"This is your final score: " + score + ".  Great job!");
 	process.exit(0);
 }
 
