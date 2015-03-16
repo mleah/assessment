@@ -8,7 +8,12 @@ userInput();
 function userInput(){
 	for(i = 0; i < 7; i++){
 		var todaysTemp = Number(sget("The temperature for day " + (i + 1) + " is: ").trim());
-		weekTemps.push(todaysTemp);
+			if(checkIfNumber(todaysTemp)){
+			weekTemps.push(todaysTemp);
+			} else {
+				i--;
+				console.log("That is not a number-please try again!")
+			}
 		}
 	calculateAverage();
 }
@@ -23,4 +28,10 @@ function calculateAverage(){
 }
 
 
-//add error checking one day...
+function checkIfNumber(todaysTemp){
+	if(todaysTemp === parseInt(todaysTemp)){
+		return true;
+	} else{
+		return false;
+	}
+}
